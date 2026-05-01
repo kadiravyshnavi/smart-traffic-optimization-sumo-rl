@@ -1,16 +1,22 @@
 # 🚦 Smart Traffic Signal Optimization using Reinforcement Learning (DQN + SUMO)
 
+## 🌐 Live Demo
+
+👉 https://smart-rl-traffic-optimization.streamlit.app/
+
+---
+
 ## 📌 Overview
 
 This project implements an intelligent traffic signal control system using **Deep Reinforcement Learning (DQN)** and **SUMO (Simulation of Urban Mobility)**.
 
-The system learns adaptive signal policies to **minimize vehicle waiting time** and **reduce congestion**, outperforming traditional fixed and greedy methods.
+The system learns adaptive signal policies to **minimize vehicle waiting time** and **reduce congestion**, outperforming traditional fixed and greedy approaches.
 
 ---
 
 ## 🎯 Problem Statement
 
-Traditional traffic signals operate on fixed timing cycles, which leads to:
+Traditional traffic signals use fixed timings, which leads to:
 
 * Traffic congestion 🚗
 * Increased waiting time ⏳
@@ -20,11 +26,11 @@ Traditional traffic signals operate on fixed timing cycles, which leads to:
 
 ## 💡 Solution
 
-We use:
+This project uses:
 
 * **SUMO** → realistic traffic simulation
 * **Deep Q-Network (DQN)** → adaptive signal control
-* **Evaluation framework** → compares RL with baseline strategies
+* **Evaluation system** → compares RL with baseline methods
 
 ---
 
@@ -33,15 +39,15 @@ We use:
 * Python
 * PyTorch
 * SUMO (Simulation of Urban Mobility)
-* Matplotlib
+* Streamlit
 
 ---
 
 ## 🚀 Features
 
 * DQN-based traffic signal optimization
-* Experience Replay + Target Network
-* Multi-scenario testing:
+* Experience replay + target network
+* Multi-scenario evaluation:
 
   * Low traffic
   * Medium traffic
@@ -49,19 +55,19 @@ We use:
   * Imbalanced traffic
 * Comparison with:
 
-  * Fixed timing
+  * Fixed timing strategy
   * Greedy strategy
-* Performance visualization using graphs
+* Interactive dashboard for visualization
 
 ---
 
 ## 📊 Results
 
-### 🔹 Overall Comparison
+### 🔹 Waiting Time Comparison
 
 ![Comparison](comparison_bar.png)
 
-### 🔹 Scenario-wise Comparison
+### 🔹 Scenario-wise Analysis
 
 ![Scenario](scenario_comparison.png)
 
@@ -75,52 +81,67 @@ We use:
 | Greedy | ~7.10            |
 | RL     | ~0.54 ✅          |
 
-👉 RL reduces waiting time by ~70–90% in complex scenarios.
+👉 RL significantly reduces congestion and waiting time.
 
 ---
 
 ## 📁 Project Structure
 
+```
 traffic_project/
-├── train.py
-├── evaluate.py
-├── config.sumocfg
-├── *.rou.xml
-├── *.net.xml
-├── best_model.pth
-├── *.png
+├── train.py              # RL training
+├── evaluate.py           # Evaluation & comparison
+├── dashboard.py          # Local SUMO live dashboard
+├── app.py                # Deployed Streamlit app
+├── config.sumocfg        # SUMO configuration
+├── *.rou.xml             # Traffic scenarios
+├── *.net.xml             # Road network
+├── best_model.pth        # Trained model
+├── *.png                 # Result graphs
+```
 
 ---
 
 ## ▶️ How to Run
 
-### 🔹 Train
+### 🔹 Train Model
 
+```bash
 python train.py
+```
 
-### 🔹 Evaluate
+### 🔹 Evaluate Model
 
+```bash
 python evaluate.py
+```
+
+### 🔹 Run Local Dashboard (with SUMO)
+
+```bash
+streamlit run dashboard.py
+```
 
 ---
 
 ## 🎓 Key Learning Outcomes
 
-* Applied Reinforcement Learning to real-world traffic problem
-* Integrated ML with simulation (SUMO)
-* Designed evaluation and visualization pipeline
+* Applied Reinforcement Learning to real-world traffic optimization
+* Integrated ML models with SUMO simulation
+* Built evaluation and visualization pipeline
+* Developed interactive dashboard for insights
 
 ---
 
 ## 🔮 Future Improvements
 
-* Multi-intersection control
-* Real-time API integration
-* Graph Neural Networks
+* Multi-intersection traffic control
+* Real-time API integration (weather/traffic)
+* Graph Neural Networks (GNN)
 * Smart city deployment
 
 ---
 
 ## ⭐ Support
 
-If you like this project, give it a ⭐
+If you like this project, give it a ⭐ and share!
