@@ -13,22 +13,36 @@ DATA = {
 st.set_page_config(page_title="Traffic RL Dashboard", layout="centered")
 
 st.title("🚦 Traffic Signal Optimization using RL")
-st.markdown("### Comparative Analysis Across Traffic Scenarios")
 
-# ================= PREPARE DATA =================
-df = pd.DataFrame(DATA, index=["Fixed", "Greedy", "RL"]).T
+# ================= SELECT SCENARIO =================
+scenario = st.selectbox("Select Traffic Scenario", list(DATA.keys()))
 
-# ================= MAIN GRAPH =================
-st.subheader("📊 Waiting Time Comparison Across Scenarios")
+fixed, greedy, rl = DATA[scenario]
 
-st.line_chart(df)
+# ================= SCENARIO VIEW =================
+st.subheader(f"📊 Results for {scenario}")
 
-# ================= HIGHLIGHT =================
-st.subheader("🏆 Key Observation")
+single_df = pd.DataFrame({
+    "Method": ["Fixed", "Greedy", "RL"],
+    "Waiting Time": [fixed, greedy, rl]
+})
 
-best_scenario = df["RL"].idxmin()
+st.bar_chart(single_df.set_index("Method"))
 
-st.success(f"RL performs best in all scenarios, with lowest waiting time observed in: {best_scenario}")
+# ================= STRONG GLOBAL GRAPH =================
+st.subheader("📈 Overall Comparison Across All Scenarios")
+
+global_df = pd.DataFrame(DATA, index=["Fixed", "Greedy", "RL"]).T
+
+st.line_chart(global_df)
+
+# ================= INSIGHT =================
+st.subheader("🧠 Insight")
+
+if rl < fixed and rl < greedy:
+    st.success("RL consistently performs best and reduces waiting time 🚀")
+else:
+    st.warning("RL shows improvement but may need tuning")
 
 # ================= FOOTER =================
 st.markdown("---")
