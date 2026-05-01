@@ -1,51 +1,131 @@
-# 🚦 Smart Traffic Optimization System (SUMO + RL + n8n)
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-RL-red)
+![SUMO](https://img.shields.io/badge/SUMO-Traffic%20Simulation-green)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
+# 🚦 Smart Traffic Signal Optimization using Reinforcement Learning (DQN + SUMO)
 
 ## 📌 Overview
 
-This project focuses on building an intelligent traffic management system using SUMO simulation and AI techniques. The goal is to optimize traffic signal control and reduce congestion.
+This project implements an intelligent traffic signal control system using **Deep Reinforcement Learning (DQN)** and **SUMO (Simulation of Urban Mobility)**.
+
+The system learns adaptive signal policies to **minimize vehicle waiting time** and **reduce congestion**, outperforming traditional fixed and greedy methods.
 
 ---
 
 ## 🎯 Problem Statement
 
-Fixed traffic signals lead to inefficient traffic flow, causing congestion and delays.
+Traditional traffic signals operate on fixed timing cycles, which leads to:
+
+* Traffic congestion 🚗
+* Increased waiting time ⏳
+* Inefficient road utilization
 
 ---
 
 ## 💡 Solution
 
-* SUMO for traffic simulation
-* Reinforcement Learning (planned) for adaptive signal control
-* n8n (planned) for real-time alerts
+We use:
+
+* **SUMO** → realistic traffic simulation
+* **Deep Q-Network (DQN)** → adaptive signal control
+* **Evaluation framework** → compares RL with baseline strategies
 
 ---
 
-## ⚙️ Technologies
+## ⚙️ Technologies Used
 
 * Python
-* SUMO
-* Reinforcement Learning (DQN/PPO - planned)
-* n8n (planned)
+* PyTorch
+* SUMO (Simulation of Urban Mobility)
+* Matplotlib
 
 ---
 
-## 🚀 Current Progress
+## 🚀 Features
 
-* SUMO setup completed
-* Auto-generated traffic simulation created
-* RL and automation integration in progress
+* DQN-based traffic signal optimization
+* Experience Replay + Target Network
+* Multi-scenario testing:
+
+  * Low traffic
+  * Medium traffic
+  * High traffic
+  * Imbalanced traffic
+* Comparison with:
+
+  * Fixed timing
+  * Greedy strategy
+* Performance visualization using graphs
+
+---
+
+## 📊 Results
+
+### 🔹 Overall Comparison
+
+![Comparison](comparison_bar.png)
+
+### 🔹 Scenario-wise Comparison
+
+![Scenario](scenario_comparison.png)
+
+---
+
+## 📈 Performance Summary
+
+| Method | Avg Waiting Time |
+| ------ | ---------------- |
+| Fixed  | ~2.03            |
+| Greedy | ~7.10            |
+| RL     | ~0.54 ✅          |
+
+👉 RL reduces waiting time by ~70–90% in complex scenarios.
 
 ---
 
 ## 📁 Project Structure
 
 traffic_project/
-├── grid.net.xml
-├── routes.rou.xml
+├── train.py
+├── evaluate.py
 ├── config.sumocfg
+├── *.rou.xml
+├── *.net.xml
+├── best_model.pth
+├── *.png
 
 ---
 
-## 📌 Status
+## ▶️ How to Run
 
-🚧 Work in Progress
+### 🔹 Train
+
+python train.py
+
+### 🔹 Evaluate
+
+python evaluate.py
+
+---
+
+## 🎓 Key Learning Outcomes
+
+* Applied Reinforcement Learning to real-world traffic problem
+* Integrated ML with simulation (SUMO)
+* Designed evaluation and visualization pipeline
+
+---
+
+## 🔮 Future Improvements
+
+* Multi-intersection control
+* Real-time API integration
+* Graph Neural Networks
+* Smart city deployment
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐
