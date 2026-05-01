@@ -1,0 +1,26 @@
+<edges>
+
+    <!-- 🔴 Incoming to center -->
+    <edge id="n2c" from="north" to="center" numLanes="3" speed="13.9"/>
+    <edge id="s2c" from="south" to="center" numLanes="3" speed="13.9"/>
+    <edge id="e2c" from="east" to="center" numLanes="3" speed="13.9"/>
+    <edge id="w2c" from="west" to="center" numLanes="3" speed="13.9"/>
+
+    <!-- 🟢 Outgoing from center -->
+    <edge id="c2n" from="center" to="north" numLanes="3" speed="13.9"/>
+    <edge id="c2s" from="center" to="south" numLanes="3" speed="13.9"/>
+    <edge id="c2e" from="center" to="east" numLanes="3" speed="13.9"/>
+    <edge id="c2w" from="center" to="west" numLanes="3" speed="13.9"/>
+
+    <!-- 🔷 Border loop (for realism) -->
+    <edge id="n2nw" from="north" to="nw" numLanes="2" speed="13.9"/>
+    <edge id="nw2w" from="nw" to="west" numLanes="2" speed="13.9"/>
+    <edge id="w2sw" from="west" to="sw" numLanes="2" speed="13.9"/>
+    <edge id="sw2s" from="sw" to="south" numLanes="2" speed="13.9"/>
+
+    <edge id="s2se" from="south" to="se" numLanes="2" speed="13.9"/>
+    <edge id="se2e" from="se" to="east" numLanes="2" speed="13.9"/>
+    <edge id="e2ne" from="east" to="ne" numLanes="2" speed="13.9"/>
+    <edge id="ne2n" from="ne" to="north" numLanes="2" speed="13.9"/>
+
+</edges>
