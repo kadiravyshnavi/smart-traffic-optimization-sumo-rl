@@ -1,8 +1,3 @@
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-RL-red)
-![SUMO](https://img.shields.io/badge/SUMO-Traffic%20Simulation-green)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
-
 # 🚦 Smart Traffic Signal Optimization using Reinforcement Learning (DQN + SUMO)
 
 ## 📌 Overview
